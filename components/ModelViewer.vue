@@ -46,7 +46,8 @@ onBeforeUnmount(() => {
     <TresCanvas
       class="demo-canvas"
       alpha
-      clear-color="#ffffff"
+      :premultiplied-alpha="false"
+      clear-color="#000000"
       :clear-alpha="0"
       window-size
       @pointer-missed="closeInfoPanel"
@@ -109,5 +110,11 @@ onBeforeUnmount(() => {
 .demo-canvas {
   position: relative;
   z-index: 1;
+  background: transparent;
+}
+
+/* Safari: без этого WebGL-композит даёт «затемнённый» фон поверх watermark */
+.demo-canvas :deep(canvas) {
+  background: transparent !important;
 }
 </style>
