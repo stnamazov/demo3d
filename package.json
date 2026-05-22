@@ -1,0 +1,21 @@
+{
+  "name": "webapp",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "dependencies": {
+    "@nuxtjs/tailwindcss": "^6.14.0",
+    "@tresjs/cientos": "^5.7.1",
+    "@tresjs/nuxt": "^5.6.1",
+    "nuxt": "^4.2.1",
+    "three": "^0.184.0",
+    "vue": "^3.5.22",
+    "vue-router": "^4.6.3"
+  }
+}
