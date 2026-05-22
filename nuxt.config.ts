@@ -5,6 +5,7 @@ export default defineNuxtConfig({
   /** 3D-сцена только на клиенте; упрощает `nuxt generate` */
   ssr: false,
   nitro: {
+    preset: 'node-server',
     prerender: {
       crawlLinks: false,
     },

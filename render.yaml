@@ -1,0 +1,14 @@
+# Render Web Service — Nitro отдаёт /_nuxt/* с корректным Content-Type.
+# Не используйте Static Site + rewrite /* → index.html: CSS/JS получат text/plain.
+services:
+  - type: web
+    name: demo3d
+    runtime: node
+    plan: free
+    buildCommand: npm ci && npm run build
+    startCommand: npm run start
+    envVars:
+      - key: NODE_VERSION
+        value: "22"
+      - key: NUXT_PUBLIC_MODEL_BASE_URL
+        sync: false

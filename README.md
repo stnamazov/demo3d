@@ -61,7 +61,18 @@ npm run build      # production-сборка (Node-сервер)
 npm run preview    # локальный просмотр
 ```
 
-Статический хостинг: приложение SPA (`ssr: false`). Нужен fallback на `index.html` или `200.html` для путей вроде `/demo_besedka_0001` (иначе хостинг вернёт 404 до загрузки JS).
+### Деплой на Render
+
+Используйте **Web Service** (Node), не Static Site — иначе rewrite `/* → index.html` может отдавать `/_nuxt/*.css` как `text/plain`.
+
+В репозитории есть `render.yaml`:
+
+- **Build:** `npm run build`
+- **Start:** `npm run start` (Nitro, `node .output/server/index.mjs`)
+
+В панели Render: **New → Blueprint** или Web Service с теми же командами. Переменная `NUXT_PUBLIC_MODEL_BASE_URL` — по необходимости.
+
+Статический хостинг (`npm run generate`): нужен fallback только для маршрутов без файла; пути `/_nuxt/**` не должны перенаправляться на `index.html`.
 
 ## Структура проекта (кратко)
 
