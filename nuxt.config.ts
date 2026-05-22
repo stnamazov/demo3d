@@ -2,6 +2,13 @@
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: false },
+  /** 3D-сцена только на клиенте; упрощает `nuxt generate` */
+  ssr: false,
+  nitro: {
+    prerender: {
+      crawlLinks: false,
+    },
+  },
   app: {
     head: {
       title: 'Демо',

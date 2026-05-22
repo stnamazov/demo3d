@@ -56,9 +56,12 @@ NUXT_PUBLIC_MODEL_BASE_URL=https://your-bucket.example.com/path/to/models
 ## Сборка
 
 ```bash
-npm run build    # production-сборка
-npm run preview  # локальный просмотр сборки
+npm run generate   # статика в .output/public (для S3, nginx и т.п.)
+npm run build      # production-сборка (Node-сервер)
+npm run preview    # локальный просмотр
 ```
+
+Статический хостинг: приложение SPA (`ssr: false`). Нужен fallback на `index.html` или `200.html` для путей вроде `/demo_besedka_0001` (иначе хостинг вернёт 404 до загрузки JS).
 
 ## Структура проекта (кратко)
 
